@@ -4,5 +4,7 @@ Vagrant.configure("2") do |config|
   if Vagrant.has_plugin?('vagrant-registration')
     config.registration.manager = 'subscription_manager'
     config.registration.auto_attach = true
+    config.registration.username = ENV['RH_USER']
+    config.registration.password = ENV['RH_PASS']
   end
 end
