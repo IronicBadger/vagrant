@@ -17,6 +17,11 @@
     name: docker
     state: present
 
+- name: Add vagrant user to docker group
+  user: name='vagrant'
+        groups=dockerroot
+        append=yes
+
 - name: reload docker service
   systemd:
     name: docker

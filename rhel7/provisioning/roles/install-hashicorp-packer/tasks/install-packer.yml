@@ -1,0 +1,13 @@
+---
+
+- name: Install unzip (pre-req for unpack)
+  yum:
+    name: unzip
+    state: present
+
+- name: Unpack binary
+  unarchive:
+    remote_src: yes
+    src: "https://releases.hashicorp.com/packer/1.2.2/packer_1.2.2_linux_amd64.zip"
+    dest: /usr/bin/
+    mode: 0775

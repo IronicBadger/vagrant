@@ -1,0 +1,4 @@
+---
+
+- name: Install packer by Hashicorp
+  include: install-packer.yml
