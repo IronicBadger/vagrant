@@ -1,0 +1,8 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/rhel7"
+
+  if Vagrant.has_plugin?('vagrant-registration')
+    config.registration.manager = 'subscription_manager'
+    config.registration.auto_attach = true
+  end
+end
