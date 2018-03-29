@@ -16,3 +16,8 @@
   yum:
     name: docker
     state: present
+
+- name: reload service httpd, in all cases
+  systemd:
+    name: docker
+    state: reloaded
