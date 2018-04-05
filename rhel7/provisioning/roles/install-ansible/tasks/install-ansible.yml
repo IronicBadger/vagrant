@@ -1,5 +1,17 @@
 ---
-
+  
+- name: Sort out repos
+  #TODO: HACK at the moment because of upstream
+  # https://github.com/ansible/ansible/issues/28159
+  shell: "{{ item }}"                                                                                                   
+  with_items:                                                                                                           
+    - subscription-manager repos --disable='*'                                                                          
+    - >                                                                                                                 
+      subscription-manager repos                                                                                        
+      --enable="rhel-7-server-rpms"                                                                                     
+      --enable="rhel-7-server-extras-rpms"                                                                              
+      --enable="rhel-7-server-optional-rpms" 
+      
 - name: Install Ansible
   yum:
     name: ansible
