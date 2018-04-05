@@ -2,3 +2,6 @@
 
 - name: Install docker
   include: install-docker.yml
+
+- name: Allow non-root user
+  include: allow-non-root.yml
