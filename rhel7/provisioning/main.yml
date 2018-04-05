@@ -4,5 +4,6 @@
   gather_facts: yes
 
   roles:
+    - install-ansible
     - install-docker
     - install-hashicorp-packer
